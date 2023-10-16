@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+        .ticket {
+            border:1px solid red;
+            box-shadow: 2px 2px 2px yellow;
+            padding: 20px;
+            background-color: lightcyan;
+        }
+        .ticket h2 {
+            text-align: center;
+            font-size: 30px;
+            font-family: Arial;
+            color:blue;
+           
+        }
+        dl {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+        }
+        dt,dd {
+            background-color: darkcyan;
+            color:white;
+            padding: 4px;
+            margin-bottom: 10px;
+        }
+        .offer {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            background-color: red;
+            color:white;
+            width: 100px;
+            padding: 20px;
+            border-radius: 20px;
+        }
+    </style>    
+    <style type="text/css" media="print">
+        .ticket {
+            background-color: none;
+            border:none;
+            box-shadow: none;
+        }
+        dl {
+            display: grid;
+            grid-template-columns: 12fr;
+        }
+        dt, dd {
+            background-color: black;
+            color:white;
+            margin-bottom: 10px;
+        }
+        .offer, marquee {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="offer">Offer 70% Off</div>
+    <div class="ticket">
+        <h2>Ticket</h2>
+        <dl>
+            <dt>Departure Time</dt>
+            <dd>07:30 PM</dd>
+            <dt>Boarding Point</dt>
+            <dd>Hyd Airport</dd>
+        </dl>
+        <marquee bgcolor="yellow">Please carry a soft copy of your ticket</marquee>
+    </div>
+</body>
+</html>

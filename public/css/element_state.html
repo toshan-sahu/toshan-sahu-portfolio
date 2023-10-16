@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>element state</title>
+    <!-- <style>
+        #UserName:read-only {
+            cursor: not-allowed;
+        }
+        button:disabled {
+            border:goldenrod;
+            background-color: gold;
+        }
+    </style> -->
+    <style>
+        #Terms+span{
+            color:red;
+        }
+        #Terms:checked+span {
+            color:green;
+        }
+        #Terms~button {
+            display: none;
+        }
+        #Terms:checked~button {
+            display: block;
+        }
+        #UserName+div {
+            display: none;
+        }
+        #UserName:focus+div {
+            display: block;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <!-- <dd>
+        <dt>UserName</dt>
+        <dt><input type="text" value="john" id="Username" readonly></dt>
+    </dd>
+    <button disabled>Submit</button> -->
+
+    <!-- New Example -->
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" pattern="[A-Z]{4,10}" id="UserName"><div>Name in Block Letters</div></dd>
+        <dt>Terms of Service</dt>  
+        <dd>
+            <textarea rows="4" cols="40" disabled>License Aggrement</textarea>
+        </dd>  
+        <dd>
+            <input type="checkbox" id="Terms"> <span>I Agree</span>
+            <br><br>
+            <button>Submit</button>
+        </dd>
+    </dl>
+</body>
+</html>

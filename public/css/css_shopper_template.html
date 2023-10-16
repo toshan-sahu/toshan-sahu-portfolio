@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopper Template</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .fashion{
+            height: 400px;
+            width: 300px;
+            background-image: url("/public/images/mens1.jfif");
+            background-size:cover ;
+            display: flex;
+            justify-content:center;
+            padding-bottom: 20px;
+            overflow: hidden;
+
+            }
+            .fashion:hover{
+                background-image: url("/public/images/mens2.jpg");
+            }
+            .icons span {
+            font-size: 22px;
+            background-color: darkcyan;
+            color:white;
+            padding: 5px;
+            border-radius: 40px;
+            margin-right: 10px;
+        }
+
+        .fashion:hover .icons {
+            margin-top: 380px;
+            transition: 2s;
+        }
+        .fashion .icons {
+            margin-top: 430px;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+  <div class="fashion">
+    <div class="icons">
+    <span class="bi bi-heart-fill"></span>
+    <span class="bi bi-cart3"></span>
+    <span class="bi bi-share"></span>
+  </div> 
+</div> 
+</body>
+</html>

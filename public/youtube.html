@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .bi-list {
+            font-size: 30px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .search-bar {
+            display: flex;
+        }
+
+        .search-text-box {
+            width: 500px;
+            border: 1px solid gray;
+            height: 25px;
+            padding: 5px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .bi-search {
+            padding: 5px;
+            border: 1px solid gray;
+            height: 25px;
+            width: 50px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            text-align: center;
+            background-color: lightgray;
+        }
+
+        .bi-mic-fill {
+            padding: 5px;
+        }
+
+        .short-hand-buttons span {
+            margin-right: 20px;
+            font-size: 20px;
+        }
+
+        .channel-logo {
+            border-radius: 80px;
+            height: 25px;
+            width: 25px;
+            border: 2px solid black;
+        }
+
+        section {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr 11fr;
+            height: 500px;
+            overflow: auto;
+        }
+
+        nav div {
+            font-size: 30px;
+            margin-bottom: 50px;
+        }
+
+        .channel-description {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 2fr 8fr 2fr;
+        }
+
+        .channel-title-container {
+            width: 600px;
+            padding: 20px;
+        }
+
+        .channel-title {
+            font-size: 30px;
+            font-family: Arial;
+        }
+
+        .channel-subtitle {
+            font-size: 18px;
+            margin-top: 10px;
+            color: gray;
+            font-family: Arial;
+        }
+
+        .subscribe-button {
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            padding: 5px;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        .channel-navigation {
+            display: flex;
+            justify-content: space-around;
+            font-family: Arial;
+            color: gray;
+            font-weight: bold;
+        }
+
+        .channel-highlights {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            column-gap: 30px;
+        }
+
+        .highlights-video {
+            width: 100%;
+            height: 250px;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: -40px;
+        }
+
+        li {
+            font-family: Arial;
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: gray;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+            column-gap: 1px;
+        }
+
+        figure {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        figcaption {
+            font-family: Arial;
+            font-weight: 400;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <span class="bi bi-list"></span>
+            <img src="images/youtube_logo.jpg" width="100">
+        </div>
+        <div class="search-bar">
+            <div class="search-text-box"> Search </div>
+            <div class="bi bi-search"></div>
+            <div class="bi bi-mic-fill"></div>
+        </div>
+        <div class="short-hand-buttons">
+            <span class="bi bi-camera-video"></span>
+            <span class="bi bi-bell"></span>
+            <img src="images/Asp.net.jpg" width="50" class="channel-logo">
+        </div>
+    </header>
+    <section>
+        <nav>
+            <div class="bi bi-house-door"></div>
+            <div class="bi bi-camera-reels"></div>
+            <div class="bi bi-lightning-charge"></div>
+            <div class="bi bi-collection-play"></div>
+        </nav>
+        <main>
+            <div>
+                <img src="images/youtube_channel_banner.jpg" width="100%">
+            </div>
+            <div class="channel-description">
+                <div>
+                    <img src="images/nareshit_logo.jpg">
+                </div>
+                <div class="channel-title-container">
+                    <div class="channel-title">Naresh i Technologies</div>
+                    <div class="channel-subtitle">@NareshIT1.1M subscribers2.8K videos</div>
+                    <p>We are one of the India's largest software training organization and an Top 5 of Best Software
+                        Training Institutes...</p>
+                </div>
+                <div>
+                    <div class="subscribe-button">Subscribe</div>
+                </div>
+            </div>
+            <div class="channel-navigation">
+                <div>HOME</div>
+                <div>VIDEOS</div>
+                <div>SHORTS</div>
+                <div>LIVE</div>
+                <div>PLAYLISTS</div>
+                <div>COMMUNITY</div>
+                <div>CHANNELS</div>
+                <div>ABOUT</div>
+            </div>
+            <article class="channel-highlights">
+                <div>
+                    <iframe src="https://www.youtube.com/embed/yBw-6rr5hbA" class="highlights-video"></iframe>
+                </div>
+                <div>
+                    167,998 views 3 years ago
+                    <p>Best Software Training Institute with Placements - Naresh i Technologies</p>
+                    <ul>
+                        <li>SQL Server @ 6.00 Pm : https://bit.ly/443b2J8</li>
+                        <li>Attend a Free Demo On Full Stack Data Science </li>
+                        <li>Python @ 11.00 AM :- https://bit.ly/3CzQAnF</li>
+                        <li>Ui Full Stack Web DevelopMent @ 8.30 AM </li>
+                    </ul>
+                </div>
+            </article>
+            <div>
+                <h3>Videos <span class="bi bi-play-fill"></span>Play All</h3>
+            </div>
+
+            <div class="our-videos">
+                <div class="row">
+                    <figure>
+                        <iframe src="https://www.youtube.com/embed/vPauKLk-cn8">
+                        </iframe>
+
+                        <figcaption>Azure DevOps and Azure... <br> Services App Services... <br>
+                            <p>2.8K views &#8226; 2 weeks ago</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <iframe src="https://www.youtube.com/embed/_A7yBhW8Fx4">
+                        </iframe>
+
+                        <figcaption>Logging in Spring Boot... <br> Applications
+                            |Mr. Nataraj... <br>
+                            <p>2.5K views &#8226; 2 weeks ago</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <iframe src="https://www.youtube.com/embed/vjWYt8bFp5E">
+                        </iframe>
+
+
+                        <figcaption>Tosca | Session-2 Trending... <br> Automation Tool Tosca... <br>
+                            <p>2.3K views &#8226; 1 month ago</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <iframe src="https://www.youtube.com/embed/Mv5qU18Ckjc">
+                        </iframe>
+
+                        <figcaption>Career Opportunities in... <br> Digital Marketing | Mr... <br>
+                            <p>2.8K views &#8226; 2 month ago</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <hr>
+                <div>
+                    <h3>Past live streams</h3>
+                </div>
+
+                <div class="row">
+
+                    <figure>
+                        <iframe src="https://www.youtube.com/embed/ISjsJ44ZZcU">
+                        </iframe>
+
+                        <figcaption>It’s a good choice to... <br> choose Data Science for freshers... <br>
+                            <p>3K views &#8226; 1 month ago</p>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <iframe src="https://www.youtube.com/embed/8ffFPCj6SlU">
+                        </iframe>
+
+                        <figcaption>AWS Session | Mr.Reyaz... <br>
+                            <p>3.9K views &#8226; 2 month ago</p>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <iframe src="https://www.youtube.com/embed/LWynsfHNyiI">
+                        </iframe>
+
+                        <figcaption>
+                            Java Programming Tutorial... <br>Videos | Mr. Hari Krishna... <br>
+                            <p>2.8K views &#8226; 2 month ago</p>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <iframe src="https://www.youtube.com/embed/si-KFFOW2gw">
+                        </iframe>
+
+                        <figcaption>C Language Tutorials Video ... <br> Digital Marketing | Mr... <br>
+                            <p>2.8K views &#8226; 2 month ago</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </main>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/jquery.cookie/jquery.cookie.js"></script>
+    <script>
+
+        function LoadVideos(){
+            $.ajax({
+                method:"get",
+                url:"http://127.0.0.1:3000/videos",
+                success: (videos)=>{
+                    videos.map(video=>{
+                        $(`
+                          <div class="card m-2 p-2" style="width:400px">
+                            <div class="card-header">
+                                <h4>${video.Title}</h4>
+                            </div>
+                            <div class="card-body">
+                                <iframe src=${video.Url} width="100%" height="300"></iframe>
+                            </div>
+                            <div class="card-footer">
+                                <div class="mb-2">
+                                    <span class="bi bi-hand-thumbs-up"></span> ${video.Likes} | 
+                                    <span class="bi bi-hand-thumbs-down"> </span> ${video.Dislikes}
+                                </div>
+                                <div>
+                                    <label class="form-label fw-bold">Comments</label>
+                                    <div>
+                                        ${video.Comments}
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        `).appendTo("main");
+                    })
+                }
+            })
+        }
+
+
+         $(function(){
+            LoadVideos();
+         })
+    </script>
+</head>
+<body class="container-fluid">
+    <h1>Your Video Home <a href="index.html">Back to Index</a> </h1>
+    <main class="d-flex flex-wrap">
+
+    </main>
+</body>
+</html>

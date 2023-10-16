@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function(){
+            var id = parseInt(sessionStorage.getItem("videoid"));
+            $.ajax({
+                method:"get",
+                url: `http://127.0.0.1:3000/video/${id}`,
+                success: (videos)=>{
+                     $("#VideoId").val(videos[0].VideoId);
+                     $("#Title").val(videos[0].Title);
+                     $("#Url").val(videos[0].Url);
+                     $("#Likes").val(videos[0].Likes);
+                     $("#Dislikes").val(videos[0].Dislikes);
+                     $("#Comments").val(videos[0].Comments);
+                }
+            })
+
+            $("#btnSave").click(()=>{
+
+                var id = parseInt($("#VideoId").val());
+
+                var video = {
+                    VideoId: parseInt($("#VideoId").val()),
+                    Title: $("#Title").val(),
+                    Url: $("#Url").val(),
+                    Likes: parseInt($("#Likes").val()),
+                    Dislikes: parseInt($("#Dislikes").val()),
+                    Comments: $("#Comments").val()
+                };
+
+                $.ajax({
+                    method:"put",
+                    url: `http://127.0.0.1:3000/updatevideo/${id}`,
+                    data: video
+                })
+                alert("Video Updated Successfully..");
+                location.href="admin-dashboard.html";
+
+            })
+        })
+    </script>
+</head>
+<body class="container-fluid">
+    <h3>Edit Video <span></span></h3>
+    <dl>
+        <dt>Video Id</dt> 
+        <dd><input type="number" id="VideoId"></dd>
+        <dt>Title</dt>
+        <dd><input type="text" id="Title"></dd>
+        <dt>Url</dt>
+        <dd><input type="text" id="Url"></dd>
+        <dt>Likes</dt>
+        <dd><input type="number" id="Likes"></dd>
+        <dt>Dislikes</dt>
+        <dd><input type="number" id="Dislikes"></dd>
+        <dt>Comments</dt>
+        <dd>
+         <textarea id="Comments"></textarea>
+        </dd>
+     </dl>
+     <button id="btnSave" class="btn btn-info">Save</button> 
+     <p>
+        <a href="admin-dashboard.html">Back to Dashboard</a>
+     </p>
+</body>
+</html>

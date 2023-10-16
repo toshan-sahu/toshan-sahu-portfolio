@@ -1,0 +1,33 @@
+.ticket {
+    border:1px solid red;
+    box-shadow: 2px 2px 2px yellow;
+    padding: 20px;
+    background-color: lightcyan;
+}
+.ticket h2 {
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial;
+    color:blue;
+   
+}
+dl {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+}
+dt,dd {
+    background-color: darkcyan;
+    color:white;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+.offer {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    background-color: red;
+    color:white;
+    width: 100px;
+    padding: 20px;
+    border-radius: 20px;
+}

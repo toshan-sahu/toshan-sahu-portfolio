@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Carausal</title>
+    <style>
+        .carousel {
+            display: flex;
+            overflow: hidden;
+        }
+        @keyframes slide1 {
+            from {
+                margin-left: 200%;
+            }
+            50% {
+                margin-left: 0%;
+            }
+            to {
+                margin-left: -200%;
+            }
+        }
+        @keyframes slide2 {
+            from {
+                margin-left: 200%;
+            }
+            50% {
+                margin-left: 0%;
+            }
+            to {
+                margin-left: 0%;
+            }
+        }
+        .slide1 {
+            animation-name: slide1;
+            animation-duration: 2s;
+        }
+        .slide2 {
+            animation-name: slide2;
+            animation-duration: 2s;
+            animation-delay: 5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <img class="slide1" src="/public/images/addclean.jpg" width="100%" alt="">
+        <img class="slide2" src="/public/images/addfashion.jpg" alt="">
+    </div>
+</body>
+</html>

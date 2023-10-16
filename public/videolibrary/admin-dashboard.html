@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/jquery.cookie/jquery.cookie.js"></script>
+    <script>
+
+        function LoadVideos(){
+            $.ajax({
+                method:"get",
+                url:"http://127.0.0.1:3000/videos",
+                success: (videos)=>{
+                   videos.map(video=>{
+                         $(`
+                           <tr> 
+                             <td> ${video.Title} </td>
+                             <td> 
+                               <iframe src=${video.Url} width="300" height="100"> </iframe>   
+                             </td> 
+                             <td>
+                                 <button id="btnEdit" value=${video.VideoId} class="bi bi-pen btn btn-outline-warning"></button>
+                                 <button id="btnDelete" value=${video.VideoId} class="bi bi-trash btn btn-outline-danger"></button>
+                             </td>
+                           </tr>
+                         `).appendTo("tbody");
+                   })
+                }
+            })
+        }
+
+         $(function(){
+
+              if($.cookie("adminId")==undefined){
+                 location.href="admin-login.html";
+              } else {
+                 $("#title").html($.cookie("adminId"));
+              }
+
+              LoadVideos();
+
+              $("#btnSignout").click(()=>{
+                  $.removeCookie("adminId");
+                  location.href="index.html";
+              })
+
+              $("#btnNew").click(()=>{
+                   $("#AddVideoContainer").toggle(2000);
+              })
+
+              $("#btnAdd").click(()=>{
+                   var video = {
+                       VideoId: parseInt($("#VideoId").val()),
+                       Title: $("#Title").val(),
+                       Url: $("#Url").val(),
+                       Likes: parseInt($("#Likes").val()),
+                       Dislikes: parseInt($("#Dislikes").val()),
+                       Comments: $("#Comments").val()
+                   }
+                   $.ajax({
+                    method: "post",
+                    url: "http://127.0.0.1:3000/addvideo",
+                    data: video
+                   })
+                   alert(`Video Added Successfully..`);
+                   location.reload();
+              })
+
+             $(document).on("click", "#btnEdit",(e)=>{
+                 sessionStorage.setItem("videoid",e.target.value);
+                 location.href="admin-edit-video.html";
+             })
+
+             $(document).on("click", "#btnDelete", (e)=>{
+                  var id = parseInt(e.target.value);
+                  var flag = confirm("Delete Video\nAre you sure, want to Delete?");
+                  if(flag==true){
+                       $.ajax({
+                        method: "delete",
+                        url: `http://127.0.0.1:3000/deletevideo/${id}`
+                       })
+                       alert("Video Deleted Successfully..");
+                       location.reload();
+                  }
+             })
+         })
+    </script>
+</head>
+<body class="container-fluid">
+    <h3>Admin Dash Board -  <span id="title"></span>  <button id="btnSignout" class="btn btn-link">Signout</button> </h3>
+    <div class="row">
+       <div class="col-4">
+        <button id="btnNew" class="btn btn-primary">New Video</button> 
+        <div id="AddVideoContainer">
+            <dl>
+               <dt>Video Id</dt> 
+               <dd><input type="number" id="VideoId"></dd>
+               <dt>Title</dt>
+               <dd><input type="text" id="Title"></dd>
+               <dt>Url</dt>
+               <dd><input type="text" id="Url"></dd>
+               <dt>Likes</dt>
+               <dd><input type="number" id="Likes"></dd>
+               <dt>Dislikes</dt>
+               <dd><input type="number" id="Dislikes"></dd>
+               <dt>Comments</dt>
+               <dd>
+                <textarea id="Comments"></textarea>
+               </dd>
+            </dl>
+            <button id="btnAdd">Add Video</button>
+        </div>
+       </div>
+        <div class="col-8">
+            <table class="table table-hover">
+                <caption class="caption-top">Videos List </caption>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Preview</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

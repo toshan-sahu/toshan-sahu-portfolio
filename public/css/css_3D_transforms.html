@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 3D Transforms</title>
+    <style>
+        img:hover{
+            transform: scale3d(1.5,1.5,2.5);
+            transition: 2s;
+            box-shadow: 14px 14px 2px black;
+        }
+        img{
+            transition: 2s;
+            margin-right: 50px;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <img src="/public/images/women.jpg" width="200" height="200" alt="">
+    <img src="/public/images/men.jpg" width="200" height="200" alt="">
+    <img src="/public/images/kids.jpg" width="200" height="200" alt="">
+</body>
+</html>
