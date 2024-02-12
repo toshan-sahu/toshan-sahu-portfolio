@@ -11,9 +11,26 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" integrity="sha512-aUhL2xOCrpLEuGD5f6tgHbLYEXRpYZ8G5yD+WlFrXrPy2IrWBlu6bih5C9H6qGsgqnU6mgx6KtU8TreHpASprw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
-        /* body {
-            background-size: cover;
-        } */
+        body {
+            background: url('images/netflix_background.jpg');
+           /* Background image is centered vertically and horizontally at all times */
+background-position: center center;
+
+/* Background image doesn't tile */
+background-repeat: no-repeat;
+
+/* Background image is fixed in the viewport so that it doesn't move when
+the content's height is greater than the image's height */
+background-attachment: fixed;
+
+/* This is what makes the background image rescale based
+on the container's size */
+background-size: cover;
+
+/* Set a background color that will be displayed
+while the background image is loading */
+/* background-color: #464646; */
+        }
         .shade {
             height: 700px;
             background-color: rgba(0,0,0,0.5);
@@ -55,20 +72,20 @@
             margin-left: 50px;
         }
         .title {
-            font-size: 60px;
+            font-size: 4vw;
             font-weight: bold;
             font-family: Arial;
             margin-top: 100px;
-            width: 800px;
+            /* width: 800px; */
         }
         .sub-title {
-            font-size: 30px;
+            font-size: 3vw;
             font-weight: bold;
             font-family: Arial;
             margin-top: 25px;
         }
         .email {
-            height: 25px;
+            height: 40px;
             width: 300px;
             background-color: black;
             color:white;
@@ -134,10 +151,10 @@
     </style>
 </head>
 
-<body background="images/netflix_background.jpg">
+<body>
     <div class="shade">
         <header>
-            <div style="font-size: 40px; font-weight: bold;
+            <div style="font-size: 4vw; font-weight: bold;
             font-family: arial; color: red;letter-spacing: -5px;">
                 <!-- <span class="brand-name">NETFLIX</span> -->
         <span class="">N</span>
